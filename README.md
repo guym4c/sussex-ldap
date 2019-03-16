@@ -3,10 +3,23 @@
 Example implementation of authorisation using the Sussex LDAP server. 
 
 ## Install
-Via a local composer repository:
+Via a local composer repository
 ```bash
 git clone https://github.com/guym4c/sussex-ldap.git sussex-ldap/
-echo "{\"repositories\":[{\"type\": \"path\",\"url\":\"sussex-ldap/\"}]}" > composer.json
+```
+
+Add the following to your ```composer.json```:
+```json
+"repositories": [
+    {
+        "type": "path",
+        "url":"sussex-ldap/"
+    }
+]
+```
+
+Then install
+```
 composer require guym4c/sussex-ldap
 ```
 
