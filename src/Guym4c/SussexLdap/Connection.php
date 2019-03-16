@@ -10,6 +10,7 @@ use Toyota\Component\Ldap\{Core\Manager,
 class Connection {
 
     const LDAP_DOMAIN = 'ad.susx.ac.uk';
+    const LDAP_BASE_DN = 'cn=ad,cn=susx';
     const LDAP_PROTOCOL_VERSION = 3;
     const LDAP_NUM_REFERRALS = 0;
 
@@ -23,6 +24,7 @@ class Connection {
     public function __construct() {
         $this->ldap = new Manager([
             'hostname' => self::LDAP_DOMAIN,
+            'base_dn' => self::LDAP_BASE_DN,
             'options' => [
                 LDAP_OPT_PROTOCOL_VERSION => self::LDAP_PROTOCOL_VERSION,
                 LDAP_OPT_REFERRALS => self::LDAP_NUM_REFERRALS,
