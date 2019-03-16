@@ -1,0 +1,24 @@
+{
+    "name": "guym4c/sussex-ldap",
+    "description": "An almost-metapackage for logging in users using Sussex LDAP",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/guym4c/sussex-ldap",
+    "keywords": ["ldap", "sussex"],
+    "authors": [
+        {
+            "name": "Guy Mac",
+            "email": "hello@guymac.eu",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-0": {
+            "Guym4c\\SussexLdap\\": "src/"
+        }
+    },
+    "require": {
+        "mrdm-nl/ldap": "^1.1"
+    }
+}
