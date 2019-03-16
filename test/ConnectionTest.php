@@ -16,7 +16,7 @@ final class ConnectionTest extends TestCase {
         $ldap = ldap_connect('ldaps://' . Connection::LDAP_DOMAIN);
         ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, Connection::LDAP_PROTOCOL_VERSION);
         ldap_set_option($ldap, LDAP_OPT_REFERRALS, Connection::LDAP_NUM_REFERRALS);
-        assertTrue(ldap_bind($ldap, self::TEST_USERNAME, self::TEST_PASSWORD));
+        $this->assertTrue(ldap_bind($ldap, self::TEST_USERNAME . '@' . Connection::LDAP_DOMAIN, self::TEST_PASSWORD));
         ldap_unbind($ldap);
     }
 
