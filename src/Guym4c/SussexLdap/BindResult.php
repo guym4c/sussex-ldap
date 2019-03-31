@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hello
- * Date: 16/03/2019
- * Time: 01:19
- */
 
 namespace Guym4c\SussexLdap;
 
-
+use Exception;
 use Toyota\Component\Ldap\Exception\LdapException;
 
 class BindResult {
@@ -16,15 +10,15 @@ class BindResult {
     /** @var bool */
     private $bound;
 
-    /** @var LdapException */
+    /** @var Exception */
     private $error;
 
     /**
      * BindResult constructor.
      * @param bool $bound
-     * @param \Exception $error
+     * @param Exception|null $error
      */
-    public function __construct(bool $bound, \Exception $error) {
+    public function __construct(bool $bound = true, ?Exception $error = null) {
         $this->bound = $bound;
         $this->error = $error;
     }
@@ -37,9 +31,9 @@ class BindResult {
     }
 
     /**
-     * @return \Exception
+     * @return Exception
      */
-    public function getError(): \Exception {
+    public function getError(): Exception {
         return $this->error;
     }
 }

@@ -12,28 +12,18 @@ final class ConnectionTest extends TestCase {
     /**
      * @test
      */
-    public function testServer(): void {
-        $ldap = ldap_connect('ldaps://' . Connection::LDAP_DOMAIN);
-        ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, Connection::LDAP_PROTOCOL_VERSION);
-        ldap_set_option($ldap, LDAP_OPT_REFERRALS, Connection::LDAP_NUM_REFERRALS);
-        $this->assertTrue(ldap_bind($ldap, self::TEST_USERNAME . '@' . Connection::LDAP_DOMAIN, self::TEST_PASSWORD));
-        ldap_unbind($ldap);
-    }
-
-    /**
-     * @test
-     */
-    public function testConnection(): void {
-        $ldap = new \Guym4c\SussexLdap\Connection();
+    public function proxiedTest(): void {
+        $connection = Connection::constructWithProxy(self::TEST_USERNAME, self::TEST_PASSWORD);
+        $connection->authenticate(self::TEST_USERNAME, self::TEST_PASSWORD);
         $this->assertTrue(true);
     }
 
     /**
      * @test
      */
-    public function testAuthorise(): void {
-        $ldap = new \Guym4c\SussexLdap\Connection();
-        $ldap->authorise(self::TEST_USERNAME, self::TEST_PASSWORD);
+    public function directTest(): void {
+        $connection = Connection::constructWithoutProxy();
+        $connection->authenticate(self::TEST_USERNAME, self::TEST_PASSWORD);
         $this->assertTrue(true);
     }
 }
