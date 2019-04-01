@@ -1,4 +1,4 @@
-# sussex-ldap
+# sussex-ldap ![](https://img.shields.io/badge/local%20packagist-v1.0-%23FF9800.svg)
 
 This package is built to allow easy authentication with the Sussex LDAP server. It supports LDAP with an SSH proxy to allow for remote authentication. The package includes a proxyless option to allow for its seamless use in production on local Sussex network.
 
