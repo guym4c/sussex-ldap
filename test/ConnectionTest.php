@@ -13,17 +13,17 @@ final class ConnectionTest extends TestCase {
      * @test
      */
     public function proxiedTest(): void {
-        $connection = Connection::constructWithProxy(self::TEST_USERNAME, self::TEST_PASSWORD);
-        $connection->authenticate(self::TEST_USERNAME, self::TEST_PASSWORD);
-        $this->assertTrue(true);
+        $connection = Connection::overProxy(self::TEST_USERNAME, self::TEST_PASSWORD);
+        $result = $connection->authenticate(self::TEST_USERNAME, self::TEST_PASSWORD);
+        $this->assertTrue($result->isBound());
     }
 
     /**
      * @test
      */
     public function directTest(): void {
-        $connection = Connection::constructWithoutProxy();
-        $connection->authenticate(self::TEST_USERNAME, self::TEST_PASSWORD);
-        $this->assertTrue(true);
+        $connection = Connection::withoutProxy();
+        $result = $connection->authenticate(self::TEST_USERNAME, self::TEST_PASSWORD);
+        $this->assertTrue($result->isBound());
     }
 }
