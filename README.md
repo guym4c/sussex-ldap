@@ -82,3 +82,8 @@ You may also provide the following options:
 ## Contributing
 Contributions are via a PR.
 
+### Security
+Do not create an issue or PR for any security-related vulnerabilities. Instead, please contact one of the maintainers:
+
+* [@guym4c](https://github.com/guym4c)  
+* [@bernhardFRG](https://github.com/bernhardFRG)
