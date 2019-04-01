@@ -64,8 +64,8 @@ A ```Connection``` exposes its proxy status with ```$connection->isProxied()```.
 
 The ```Connection::withoutProxy()``` constructor accepts the following options. All default to the Sussex setup at time of the latest release.
 
-```$host```: the LDAP server hostname
-```$baseDn```: the LDAP base DN
+```$host```: the LDAP server hostname  
+```$baseDn```: the LDAP base DN  
 ```$options```: an array of PHP ```ext-ldap``` options as defined [here](https://www.php.net/manual/en/ldap.constants.php).
 
 ### With proxy
@@ -73,7 +73,8 @@ The ```Connection::withoutProxy()``` constructor accepts the following options. 
 The package sets up the proxy connection over SSH using the provided ```$proxyUsername``` and ```$proxyPassword```. Where no ```$proxyPassword``` is provided it will fall back to username-only SSH agent proxy authentication.
 
 You may also provide the following options:
-```$proxyDomain```: the proxy host
+
+```$proxyDomain```: the proxy host  
 ```$userDomain```: the domain that is appended to each user (see above)
 
 ## Contributing
