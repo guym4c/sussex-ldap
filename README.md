@@ -23,6 +23,8 @@ Then install
 composer require guym4c/sussex-ldap
 ```
 
+This package requires ```php-ssh2```, which must be installed manually from PECL on most PHP installations.
+
 ## Usage
 
 ### Without proxy
